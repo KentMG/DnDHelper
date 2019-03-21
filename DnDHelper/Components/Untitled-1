@@ -1,0 +1,22 @@
+[{
+        Name: 'Shyael Illitoris',
+        Stats: {
+          Class: 'Druid',
+          HP: '45',
+          AC: '12'
+        },
+        WildShapes: [
+          {
+            Name: 'Dire Wolf',
+            Stats: {
+              HP: '37',
+              AC: '14',
+              Speed: '50'
+            },
+            Abilities: [
+              'Pack Tactics',
+              'Keen Smell',
+              'Keen Hearing'
+            ]
+          }]
+      }]
