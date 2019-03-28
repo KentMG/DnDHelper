@@ -9,7 +9,7 @@ export default class ViewShapesScreen extends Component {
         super(props);
 
         this.state = {
-            Shapes=[],
+            Shapes: [],
             expanded: true,
             open: false,
         };
@@ -24,20 +24,15 @@ export default class ViewShapesScreen extends Component {
 
     componentDidMount() {
         let that = this;
-        const WildShapes = this.props.navigation.getParam('WildShapes','[]');
-        
-        client.connect(err => {
-          const collection = client.db("DnDHelper").collection("Characters");
+        const WildShapes = this.props.navigation.getParam('WildShapes', '[]');
 
-          WildShapes.map(shape => {
-            shape = collection.find({shape});
-            that.setState({Shapes:that.state.Shapes.push(shape)})    
-          })
-          that.setState({Shapes})
-          client.close();
+
+        WildShapes.map(shape => {
+            shape = fetch()
+            that.setState({ Shapes: that.state.Shapes.push(shape) })
         });
-    
-      }
+
+    }
 
     static navigationOptions = {
         title: 'Wildshapes',
