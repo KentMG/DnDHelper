@@ -24,8 +24,8 @@ const ShapesSchema = new Schema({
   Actions:{ type:  Array, "default": [] }
 });
 
-const Characters = mongoose.model("Character", CharacterSchema);
 const Shapes = mongoose.model("Shape", ShapesSchema, "Shapes");
+const Characters = mongoose.model("Character", CharacterSchema);
 module.exports.Characters = Characters;
 module.exports.Shapes = Shapes;
 

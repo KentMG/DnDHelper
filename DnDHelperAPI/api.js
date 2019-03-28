@@ -7,7 +7,7 @@ var cors = require('cors');
 express().use("*", cors());
 
 const Character = require('./models').Characters
-//const Shapes = require('./models').Shapes
+const Shapes = require('./models').Shapes
 
 router.post("/Update", function(req, res){
     let Char = new Character({
