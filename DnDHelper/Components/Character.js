@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { List } from 'react-native-paper';
+import WildShapeMap from './WildShape'
 
 
 export default class Character extends Component {
@@ -15,7 +16,11 @@ render(){
                 <List.Item title={"        HP: " + this.props.Character.HP} />
                 <List.Item title={"        AC: " + this.props.Character.AC} />
             </List.Accordion>
-            <List.Item title="    Wild Shapes" onPress={() => this.props.navigation.navigate('ViewShapes', {WildShapes:props.Character.WildShapes})} />
+            <List.Accordion title='    WildShapes'>
+                {this.props.Character.WildShapes.map((shapeId, i) =>(
+                    <WildShapeMap key = {i} Shape = {shapeId.slice(11, shapeId.length - 3)} />
+                ))}
+            </List.Accordion>
         </List.Accordion>
     )
 }

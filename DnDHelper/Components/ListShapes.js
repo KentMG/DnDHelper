@@ -20,15 +20,32 @@ export default class ViewShapesScreen extends Component {
             this.setState({
                 expanded: !this.state.expanded
             });
+        getShape = (shapeId) => {
+            let shape;
+            // await fetch(`https://dndhelperapi.herokuapp.com/shapes/${shapeId}`, {
+            //     method: 'get'
+            //   })
+            //     .then((response) => {
+            //       return response.json();
+            //     })
+            //     .then((events) => {
+            //       shape = events 
+            //     })
+            //     .catch(() => {
+            //       return "fault 2";
+            //     });
+        }
     }
+
+
 
     componentDidMount() {
         let that = this;
         const WildShapes = this.props.navigation.getParam('WildShapes', '[]');
 
 
-        WildShapes.map(shape => {
-            shape = fetch()
+        WildShapes.map(shapeId => {
+            let shape = getShape(shapeId)
             that.setState({ Shapes: that.state.Shapes.push(shape) })
         });
 
@@ -49,7 +66,7 @@ export default class ViewShapesScreen extends Component {
         return (
             <View style={{ flex: 1, backgroundColor: '#000000' }}>
                 <List.Section>
-                    {WildShapes.map((WildShape, i) => (
+                    {this.state.Shapes.map((WildShape, i) => (
                         <WildShapeMap key={i} WildShape={WildShape} navigation={this.props.navigation} />
                     ))}
                 </List.Section>

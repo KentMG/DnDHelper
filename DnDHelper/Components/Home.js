@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import CharacterMap from './Character';
 import { AsyncStorage } from 'react-native';
 
@@ -112,11 +112,13 @@ export default class HomeScreen extends Component {
     const CharData = this.state.CharData;
     console.log(this.state.CharData)
     return (
-      <View style={{ flex: 1, backgroundColor: '#000000' }}>
+      <ScrollView style={{ flex: 1, backgroundColor: '#000000' }}>
+        <View style={{ flex: 1, backgroundColor: '#000000' }}>
         {CharData.map((Character, i) => (
           <CharacterMap key={i} Character={Character} navigation={this.props.navigation} />
         ))}
-      </View>
+        </View>
+      </ScrollView>
     );
   }
 }
