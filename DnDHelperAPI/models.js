@@ -24,9 +24,16 @@ const ShapesSchema = new Schema({
   Actions:{ type:  Array, "default": [] }
 });
 
+const AbilitiesSchema = new Schema({
+	Name:{type: String},
+	Description:{type: String}
+}, {collection : 'Abilities'});
+
 const Shapes = mongoose.model("Shape", ShapesSchema, "Shapes");
 const Characters = mongoose.model("Character", CharacterSchema);
+const Abilities = mongoose.model("Ability", AbilitiesSchema);
 module.exports.Characters = Characters;
 module.exports.Shapes = Shapes;
+module.exports.Abilities = Abilities;
 
 

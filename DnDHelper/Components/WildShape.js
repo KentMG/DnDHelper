@@ -78,8 +78,8 @@ export default class WildShape extends Component {
                 </List.Accordion>
                 <List.Accordion title='    Abilities'>
                     {this.state.Abilities.map((Ability, i) => {
-                        return (<List.Item key={i} title={`        ${Ability}`} />)
-                    })}
+                        return (<Ability key={i} Ability={Ability}/>)
+                    })}				
                 </List.Accordion>
             </List.Accordion>
         )

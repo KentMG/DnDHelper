@@ -8,6 +8,7 @@ express().use("*", cors());
 
 const Character = require('./models').Characters
 const Shapes = require('./models').Shapes
+const Abilities = require('./models').Abilities
 
 router.post("/Update", function(req, res){
     let Char = new Character({
@@ -23,6 +24,14 @@ router.post("/Update", function(req, res){
     Char.save();
     res.send("ok");
 })
+
+router.get('/Abilities/:id', (req, res) => {
+    let id = req.params.id;
+    Abilities.findById(id, (err, oneAbility) => {
+        if (err) console.log(err);
+        res.json(oneAbility);
+    })
+});
 
 router.get("/Characters", function (req, res) {
 
