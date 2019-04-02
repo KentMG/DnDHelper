@@ -5,7 +5,7 @@ var cors = require('cors');
 
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb+srv://Shyael:Illitoris@dndhelper-kyqmm.mongodb.net/DnDHelper?retryWrites=true", {
+mongoose.connect("mongodb+srv://<username>:<password>@dndhelper-kyqmm.mongodb.net/DnDHelper?retryWrites=true", {
     useCreateIndex: true,
     useNewUrlParser: true
 })

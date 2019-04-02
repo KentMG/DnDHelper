@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://Shyael:<password>@dndhelper-kyqmm.mongodb.net/test?retryWrites=true";
+const uri = "mongodb+srv://<username>:<password>@dndhelper-kyqmm.mongodb.net/test?retryWrites=true";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 const express = require('express');
 const router = express.Router();

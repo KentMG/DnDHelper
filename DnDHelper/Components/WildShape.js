@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { List } from 'react-native-paper';
-import { Dimensions } from 'react-native'
+import { Dimensions } from 'react-native';
+import Abilities from './Abilities'
 
 
 export default class WildShape extends Component {
@@ -78,7 +79,7 @@ export default class WildShape extends Component {
                 </List.Accordion>
                 <List.Accordion title='    Abilities'>
                     {this.state.Abilities.map((Ability, i) => {
-                        return (<Ability key={i} Ability={Ability}/>)
+                        return (<Abilities key={i} Ability={Ability}/>)
                     })}				
                 </List.Accordion>
             </List.Accordion>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import CharacterMap from './Character';
 import { AsyncStorage } from 'react-native';
+import { List, FAB, Portal } from 'react-native-paper';
 
 
 
@@ -118,6 +119,22 @@ export default class HomeScreen extends Component {
           <CharacterMap key={i} Character={Character} navigation={this.props.navigation} />
         ))}
         </View>
+        <Portal>
+                    <FAB.Group
+                        open={this.state.open}
+                        icon={this.state.open ? 'today' : 'add'}
+                        actions={[
+                            { icon: 'add', label: 'Add Shape', onPress: () => console.log('Add Shape') },
+                            { icon: 'add', label: 'Add Character', onPress: () => console.log('Add Character') },
+                        ]}
+                        onStateChange={({ open }) => this.setState({ open })}
+                        onPress={() => {
+                            if (this.state.open) {
+                                // do something if the speed dial is open
+                            }
+                        }}
+                    />
+                </Portal>
       </ScrollView>
     );
   }

@@ -16,12 +16,12 @@ const theme = {
   dark: true,
   roundness: 4,
   colors: {
-    primary: '#AA002A',
-    accent: '#222',
+    primary: '#006DAA',
+    accent: '#003559',
     background: black,
-    surface: '#111',
+    surface: '#061A40',
     error: '#B00020',
-    text: '#AA002A',
+    text: '#5EB1BF',
     disabled: color(grey800)
       .alpha(0.3)
       .rgb()
@@ -43,7 +43,7 @@ const theme = {
 export default function Main() {
     return (
       <PaperProvider theme={theme}>
-        <App style={{backgroundColor:'#000000'}}/>
+        <App style={{backgroundColor:'#080708'}}/>
       </PaperProvider>
     );
   }

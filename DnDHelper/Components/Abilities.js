@@ -1,3 +1,7 @@
+import React, { Component } from 'react';
+import { List } from 'react-native-paper';
+import { Dimensions } from 'react-native';
+
 export default class Abilities extends Component {
     constructor(props) {
         super(props);
