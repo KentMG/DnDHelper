@@ -26,7 +26,7 @@ const theme = {
       .alpha(0.3)
       .rgb()
       .string(),
-    placeholder: color(pinkA400)
+    placeholder: color('#adfcf9')
       .alpha(0.54)
       .rgb()
       .string(),
@@ -34,7 +34,7 @@ const theme = {
       .alpha(0.5)
       .rgb()
       .string(),
-    notification: pinkA400,
+    notification: grey800,
   },
   fonts,
 };

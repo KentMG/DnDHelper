@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import CharacterMap from './Character';
+import AddShape from './AddShape';
 import { AsyncStorage } from 'react-native';
 import { List, FAB, Portal } from 'react-native-paper';
 
@@ -17,7 +18,8 @@ export default class HomeScreen extends Component {
 
     this.state = {
       expanded: true,
-      CharData: []
+      CharData: [],
+      addShape: false
     };
 
     const { navigate } = this.props.navigation;
@@ -110,6 +112,11 @@ export default class HomeScreen extends Component {
 
 
   render() {
+    if(this.state.addShape==true){
+      return(
+        <AddShape CharData={this.state.CharData}/>
+      )
+    }
     const CharData = this.state.CharData;
     console.log(this.state.CharData)
     return (
@@ -124,7 +131,7 @@ export default class HomeScreen extends Component {
                         open={this.state.open}
                         icon={this.state.open ? 'today' : 'add'}
                         actions={[
-                            { icon: 'add', label: 'Add Shape', onPress: () => console.log('Add Shape') },
+                            { icon: 'add', label: 'Add Shape', onPress: () => this.setState({addShape: true}) },
                             { icon: 'add', label: 'Add Character', onPress: () => console.log('Add Character') },
                         ]}
                         onStateChange={({ open }) => this.setState({ open })}

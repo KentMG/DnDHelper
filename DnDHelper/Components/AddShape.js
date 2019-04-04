@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { List, TextInput } from 'react-native-paper';
-import { Dimensions } from 'react-native';
+import { StyleSheet, ScrollView, View, Dimensions } from 'react-native';
 import Abilities from './Abilities'
 
 
@@ -61,7 +61,7 @@ export default class WildShape extends Component {
         console.log(this.state)
         let { Width, height } = Dimensions.get('window')
         return (
-            <>
+            <ScrollView style={{ flex: 1, backgroundColor: '#000000' }}>
                 <TextInput
                     label='Name'
                     value={this.state.Name}
@@ -93,36 +93,36 @@ export default class WildShape extends Component {
                     mode='outlined'
                 />
                 <List.Accordion title='Speeds'>
-                <TextInput
-                    label='Walking Speed'
-                    value={this.state.SpeedG}
-                    onChangeText={SpeedG => this.setState({ SpeedG })}
-                    mode='outlined'
-                />
-                <TextInput
-                    label='Fly Speed'
-                    value={this.state.SpeedF}
-                    onChangeText={SpeedF => this.setState({ SpeedF })}
-                    mode='outlined'
-                />
-                <TextInput
-                    label='Burrow Speed'
-                    value={this.state.SpeedB}
-                    onChangeText={SpeedB => this.setState({ SpeedB })}
-                    mode='outlined'
-                />
-                <TextInput
-                    label='Swim Speed'
-                    value={this.state.SpeedS}
-                    onChangeText={SpeedS => this.setState({ SpeedS })}
-                    mode='outlined'
-                />
-                <TextInput
-                    label='Climb Speed'
-                    value={this.state.SpeedC}
-                    onChangeText={SpeedC => this.setState({ SpeedC })}
-                    mode='outlined'
-                />
+                    <TextInput
+                        label='Walking Speed'
+                        value={this.state.SpeedG}
+                        onChangeText={SpeedG => this.setState({ SpeedG })}
+                        mode='outlined'
+                    />
+                    <TextInput
+                        label='Fly Speed'
+                        value={this.state.SpeedF}
+                        onChangeText={SpeedF => this.setState({ SpeedF })}
+                        mode='outlined'
+                    />
+                    <TextInput
+                        label='Burrow Speed'
+                        value={this.state.SpeedB}
+                        onChangeText={SpeedB => this.setState({ SpeedB })}
+                        mode='outlined'
+                    />
+                    <TextInput
+                        label='Swim Speed'
+                        value={this.state.SpeedS}
+                        onChangeText={SpeedS => this.setState({ SpeedS })}
+                        mode='outlined'
+                    />
+                    <TextInput
+                        label='Climb Speed'
+                        value={this.state.SpeedC}
+                        onChangeText={SpeedC => this.setState({ SpeedC })}
+                        mode='outlined'
+                    />
                 </List.Accordion>
                 <List.Accordion title={"        Actions"}>
                     {this.state.Actions.map((action, i) => {
@@ -143,7 +143,7 @@ export default class WildShape extends Component {
                         return (<Abilities key={i} Ability={Ability} />)
                     })}
                 </List.Accordion>
-            </>
+            </ScrollView>
         )
     }
 }
