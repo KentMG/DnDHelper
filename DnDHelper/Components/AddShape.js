@@ -22,7 +22,7 @@ export default class WildShape extends Component {
             Senses: [],
             Abilities: [],
             Actions: [],
-            Challenge: 0
+            CR: 0
         }
 
     }
@@ -68,6 +68,7 @@ export default class WildShape extends Component {
                     onChangeText={Name => this.setState({ Name })}
                     mode='outlined'
                 />
+                <List.Accordion title='Stats'>
                 <TextInput
                     label='HP'
                     value={this.state.HP}
@@ -81,17 +82,12 @@ export default class WildShape extends Component {
                     mode='outlined'
                 />
                 <TextInput
-                    label='Class'
-                    value={this.state.Class}
-                    onChangeText={Class => this.setState({ Class })}
+                    label='Challenge Rating'
+                    value={this.state.CR}
+                    onChangeText={CR => this.setState({ CR })}
                     mode='outlined'
                 />
-                <TextInput
-                    label='Level'
-                    value={this.state.Level}
-                    onChangeText={Level => this.setState({ Level })}
-                    mode='outlined'
-                />
+                </List.Accordion>
                 <List.Accordion title='Speeds'>
                     <TextInput
                         label='Walking Speed'
